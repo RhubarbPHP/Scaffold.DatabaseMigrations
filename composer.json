@@ -1,20 +1,21 @@
 {
-  "name": "rhubarbphp/scaffold-migrations",
-  "description": "Provides scripted updates for managed transitions in application versions",
+  "name": "rhubarbphp/scaffold-database-migrations",
+  "description": "INSERT DESCRIPTION HERE",
   "keywords": [
     "version",
     "script",
     "rhubarb",
     "php",
     "framework",
-    "migration"
+    "migration",
+    "database"
   ],
   "homepage": "http://www.rhubarbphp.com/",
   "license": "Apache-2.0",
   "autoload": {
     "psr-4": {
-      "Rhubarb\\Scaffolds\\Migrations\\": "src/",
-      "Rhubarb\\Scaffolds\\Migrations\\Tests\\": "tests/unit/"
+      "Rhubarb\\Scaffolds\\DatabaseMigrations\\": "src/",
+      "Rhubarb\\Scaffolds\\DatabaseMigrations\\Tests\\": "tests/unit/"
     }
   },
   "minimum-stability": "dev",

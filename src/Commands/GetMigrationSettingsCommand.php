@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Rhubarb\Scaffolds\Migrations\Commands;
+namespace Rhubarb\Scaffolds\DatabaseMigrations\Commands;
 
 
 use Rhubarb\Crown\Application;
 use Rhubarb\Custard\Command\CustardCommand;
-use Rhubarb\Scaffolds\Migrations\MigrationsSettings;
+use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

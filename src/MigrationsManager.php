@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Rhubarb\Scaffolds\Migrations;
+namespace Rhubarb\Scaffolds\DatabaseMigrations;
 
 
 use Rhubarb\Crown\Application;
 use Rhubarb\Crown\DependencyInjection\SingletonTrait;
 use Rhubarb\Crown\Exceptions\ImplementationException;
-use Rhubarb\Scaffolds\Migrations\Scripts\MigrationScriptInterface;
+use Rhubarb\Scaffolds\DatabaseMigrations\Scripts\MigrationScriptInterface;
 
 class MigrationsManager
 {

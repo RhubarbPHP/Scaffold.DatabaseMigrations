@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Rhubarb\Scaffolds\Migrations\Tests\Fixtures;
+namespace Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures;
 
 
-use Rhubarb\Scaffolds\Migrations\Scripts\DataMigrationScript;
+use Rhubarb\Scaffolds\DatabaseMigrations\Scripts\DataMigrationScript;
 use Rhubarb\Stem\Schema\Columns\Column;
 
 class TestDataMigrationScript extends DataMigrationScript

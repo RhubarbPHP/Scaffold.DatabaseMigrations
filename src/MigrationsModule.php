@@ -16,12 +16,12 @@
  *  limitations under the License.
  */
 
-namespace Rhubarb\Scaffolds\Migrations;
+namespace Rhubarb\Scaffolds\DatabaseMigrations;
 
 use Rhubarb\Crown\Module;
-use Rhubarb\Scaffolds\Migrations\Commands\GetMigrationSettingsCommand;
-use Rhubarb\Scaffolds\Migrations\Commands\MigrateCommand;
-use Rhubarb\Scaffolds\Migrations\Commands\RunMigrationScriptCommand;
+use Rhubarb\Scaffolds\DatabaseMigrations\Commands\GetMigrationSettingsCommand;
+use Rhubarb\Scaffolds\DatabaseMigrations\Commands\MigrateCommand;
+use Rhubarb\Scaffolds\DatabaseMigrations\Commands\RunMigrationScriptCommand;
 
 class MigrationsModule extends Module
 {

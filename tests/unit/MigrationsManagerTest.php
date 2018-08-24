@@ -1,12 +1,12 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace Rhubarb\Scaffolds\Migrations;
+namespace Rhubarb\Scaffolds\DatabaseMigrations;
 
 use Rhubarb\Crown\Exceptions\ImplementationException;
-use Rhubarb\Scaffolds\Migrations\Scripts\MigrationScriptInterface;
-use Rhubarb\Scaffolds\Migrations\Tests\Fixtures\MigrationsTestCase;
-use Rhubarb\Scaffolds\Migrations\Tests\Fixtures\TestMigrationScript;
-use Rhubarb\Scaffolds\Migrations\Tests\Fixtures\TestMigrationsManager;
+use Rhubarb\Scaffolds\DatabaseMigrations\Scripts\MigrationScriptInterface;
+use Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures\MigrationsTestCase;
+use Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures\TestMigrationScript;
+use Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures\TestMigrationsManager;
 
 class MigrationsManagerTest extends MigrationsTestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rhubarb\Scaffolds\Migrations\Models;
+namespace Rhubarb\Scaffolds\DatabaseMigrations\Models;
 
 use Rhubarb\Stem\Models\Model;
 use Rhubarb\Stem\Schema\Columns\AutoIncrementColumn;

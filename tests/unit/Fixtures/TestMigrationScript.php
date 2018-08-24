@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Rhubarb\Scaffolds\Migrations\Tests\Fixtures;
+namespace Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures;
 
 
-use Rhubarb\Scaffolds\Migrations\Scripts\MigrationScriptInterface;
+use Rhubarb\Scaffolds\DatabaseMigrations\Scripts\MigrationScriptInterface;
 
 class TestMigrationScript implements MigrationScriptInterface
 {

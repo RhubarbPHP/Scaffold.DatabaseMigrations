@@ -1,6 +1,6 @@
 <?php
 
-namespace Rhubarb\Scaffolds\Migrations;
+namespace Rhubarb\Scaffolds\DatabaseMigrations;
 
 use Rhubarb\Crown\Exceptions\ImplementationException;
 use Rhubarb\Crown\Settings;

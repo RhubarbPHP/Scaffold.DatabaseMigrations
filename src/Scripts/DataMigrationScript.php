@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Rhubarb\Scaffolds\Migrations\Scripts;
+namespace Rhubarb\Scaffolds\DatabaseMigrations\Scripts;
 
 use Error;
 use PHPUnit\Runner\Exception;
 use Rhubarb\Crown\Logging\Log;
-use Rhubarb\Scaffolds\Migrations\MigrationsSettings;
+use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
 use Rhubarb\Stem\Collections\Collection;
 use Rhubarb\Stem\Collections\RepositoryCollection;
 use Rhubarb\Stem\Exceptions\FilterNotSupportedException;
@@ -22,7 +22,7 @@ use Rhubarb\Stem\Schema\ModelSchema;
 /**
  * Class DataMigrationScript
  *
- * @package Rhubarb\Scaffolds\Migrations\Scripts
+ * @package Rhubarb\Scaffolds\DatabaseMigrations\Scripts
  */
 abstract class DataMigrationScript implements MigrationScriptInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Rhubarb\Scaffolds\Migrations\UseCases;
+namespace Rhubarb\Scaffolds\DatabaseMigrations\UseCases;
 
 
-use Rhubarb\Scaffolds\Migrations\MigrationsManager;
-use Rhubarb\Scaffolds\Migrations\MigrationsSettings;
+use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsManager;
+use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
 
 class MigrationEntity
 {

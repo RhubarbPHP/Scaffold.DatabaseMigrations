@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Rhubarb\Scaffolds\Migrations\Tests\Fixtures;
+namespace Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures;
 
 
 use Rhubarb\Stem\Schema\SolutionSchema;

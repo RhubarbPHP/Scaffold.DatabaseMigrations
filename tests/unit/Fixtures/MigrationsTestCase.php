@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Rhubarb\Scaffolds\Migrations\Tests\Fixtures;
+namespace Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures;
 
 
 use Rhubarb\Crown\Tests\Fixtures\TestCases\RhubarbTestCase;
-use Rhubarb\Scaffolds\Migrations\MigrationsManager;
-use Rhubarb\Scaffolds\Migrations\MigrationsModule;
-use Rhubarb\Scaffolds\Migrations\MigrationsSettings;
+use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsManager;
+use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsModule;
+use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
 use Rhubarb\Stem\Models\Model;
 use Rhubarb\Stem\Repositories\Offline\Offline;
 use Rhubarb\Stem\Repositories\Repository;
