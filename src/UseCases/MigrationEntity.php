@@ -3,9 +3,7 @@
 
 namespace Rhubarb\Scaffolds\DatabaseMigrations\UseCases;
 
-
-use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsManager;
-use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
+use Rhubarb\Scaffolds\Migrations\DatabaseMigrationsStateProvider;
 
 class MigrationEntity
 {
@@ -20,6 +18,6 @@ class MigrationEntity
 
     public function __construct()
     {
-        $this->localVersion = MigrationsSettings::singleton()->getLocalVersion();
+        $this->localVersion = DatabaseMigrationsStateProvider::getProvider()->getLocalVersion();
     }
 }

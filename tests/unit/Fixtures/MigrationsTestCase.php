@@ -6,7 +6,7 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures;
 
 use Rhubarb\Crown\Tests\Fixtures\TestCases\RhubarbTestCase;
 use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsManager;
-use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsModule;
+use Rhubarb\Scaffolds\DatabaseMigrations\DatabaseMigrationsModule;
 use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
 use Rhubarb\Stem\Models\Model;
 use Rhubarb\Stem\Repositories\Offline\Offline;
@@ -23,7 +23,7 @@ class MigrationsTestCase extends RhubarbTestCase
     {
         $parent = parent::setUp();
 
-        $this->application->registerModule(new MigrationsModule());
+        $this->application->registerModule(new DatabaseMigrationsModule());
         $this->application->initialiseModules();
 
         Repository::setDefaultRepositoryClassName(Offline::class);

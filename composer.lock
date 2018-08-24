@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ca059c925fd7703fbde39d812b1019f",
+    "content-hash": "21044f1e6888c5e069bcad3d507ec084",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -198,16 +198,16 @@
         },
         {
             "name": "rhubarbphp/rhubarb",
-            "version": "1.6.1",
+            "version": "1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RhubarbPHP/Rhubarb.git",
-                "reference": "d403fc225e87f8417c5b5f4066df858d83f01600"
+                "reference": "b27141161913029e07569a5c5576495274413546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RhubarbPHP/Rhubarb/zipball/d403fc225e87f8417c5b5f4066df858d83f01600",
-                "reference": "d403fc225e87f8417c5b5f4066df858d83f01600",
+                "url": "https://api.github.com/repos/RhubarbPHP/Rhubarb/zipball/b27141161913029e07569a5c5576495274413546",
+                "reference": "b27141161913029e07569a5c5576495274413546",
                 "shasum": ""
             },
             "require": {
@@ -242,7 +242,7 @@
                 "framework",
                 "php"
             ],
-            "time": "2018-07-03T12:59:29+00:00"
+            "time": "2018-08-24T13:22:41+00:00"
         },
         {
             "name": "rhubarbphp/scaffold-application-settings",
@@ -292,12 +292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1ed8ba31403db259af03c7559f000beadd287314"
+                "reference": "8ca04d87a73d209b918f352f72f8ebba3fcb61c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/1ed8ba31403db259af03c7559f000beadd287314",
-                "reference": "1ed8ba31403db259af03c7559f000beadd287314",
+                "url": "https://api.github.com/repos/symfony/console/zipball/8ca04d87a73d209b918f352f72f8ebba3fcb61c4",
+                "reference": "8ca04d87a73d209b918f352f72f8ebba3fcb61c4",
                 "shasum": ""
             },
             "require": {
@@ -353,7 +353,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26 11:25:51"
+            "time": "2018-08-21 12:03:16"
         },
         {
             "name": "symfony/contracts",
@@ -530,7 +530,7 @@
                 "gherkin",
                 "parser"
             ],
-            "time": "2017-11-27T08:33:48+00:00"
+            "time": "2017-11-27 08:33:48"
         },
         {
             "name": "codeception/codeception",
@@ -624,7 +624,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2018-03-28T21:56:48+00:00"
+            "time": "2018-03-28 21:56:48"
         },
         {
             "name": "codeception/stub",
@@ -752,7 +752,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2018-03-05T09:41:42+00:00"
+            "time": "2018-03-05 09:41:42"
         },
         {
             "name": "facebook/webdriver",
@@ -877,7 +877,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-08-08T04:37:00+00:00"
+            "time": "2018-08-08 04:37:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -928,7 +928,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2018-03-25T01:26:01+00:00"
+            "time": "2018-03-25 01:26:01"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -994,7 +994,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-07-29T08:09:46+00:00"
+            "time": "2018-07-29 08:09:46"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1042,7 +1042,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2018-06-11T23:09:50+00:00"
+            "time": "2018-06-11 23:09:50"
         },
         {
             "name": "phar-io/manifest",
@@ -1207,7 +1207,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-08-05T17:53:17+00:00"
+            "time": "2018-08-05 17:53:17"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1270,7 +1270,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-04-07T12:06:18+00:00"
+            "time": "2018-04-07 12:06:18"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1317,7 +1317,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2017-11-27T13:52:08+00:00"
+            "time": "2017-11-27 13:52:08"
         },
         {
             "name": "phpunit/php-text-template",
@@ -1407,7 +1407,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2018-01-06T05:27:16+00:00"
+            "time": "2018-01-06 05:27:16"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -1456,7 +1456,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-11-27T08:47:38+00:00"
+            "time": "2017-11-27 08:47:38"
         },
         {
             "name": "phpunit/phpunit",
@@ -1464,12 +1464,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "24da433d7384824d65ea93fbb462e2f31bbb494e"
+                "reference": "6a24e4d487727e799d2ffa33a1b2f4164f412cc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/24da433d7384824d65ea93fbb462e2f31bbb494e",
-                "reference": "24da433d7384824d65ea93fbb462e2f31bbb494e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6a24e4d487727e799d2ffa33a1b2f4164f412cc4",
+                "reference": "6a24e4d487727e799d2ffa33a1b2f4164f412cc4",
                 "shasum": ""
             },
             "require": {
@@ -1540,7 +1540,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-08-22T06:32:48+00:00"
+            "time": "2018-08-24 14:02:14"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1599,7 +1599,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2018-08-09T05:50:03+00:00"
+            "time": "2018-08-09 05:50:03"
         },
         {
             "name": "psr/http-message",
@@ -1649,7 +1649,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06T14:39:51+00:00"
+            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -1692,12 +1692,12 @@
             "time": "2016-02-11T07:05:27+00:00"
         },
         {
-            "name": "rhubarbphp/scaffold-migrations",
+            "name": "rhubarbphp/module-migrations",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/gcdtech/module.migrations",
-                "reference": "beebfef303b61f0e9465264f5577bfb920d078b0"
+                "reference": "1093d71b4927e82e17745c24a7c6f358018d54b9"
             },
             "require": {
                 "rhubarbphp/custard": "*",
@@ -1713,8 +1713,8 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Rhubarb\\Scaffolds\\Migrations\\": "src/",
-                    "Rhubarb\\Scaffolds\\Migrations\\Tests\\": "tests/unit/"
+                    "Rhubarb\\Modules\\Migrations\\": "src/",
+                    "Rhubarb\\Modules\\Migrations\\Tests\\": "tests/unit"
                 }
             },
             "license": [
@@ -1730,7 +1730,7 @@
                 "script",
                 "version"
             ],
-            "time": "2018-08-24T09:28:31+00:00"
+            "time": "2018-08-24T15:16:25+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -1775,7 +1775,7 @@
             ],
             "description": "Looks up which function or method a line of code belongs to",
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
-            "time": "2018-05-15T05:52:48+00:00"
+            "time": "2018-05-15 05:52:48"
         },
         {
             "name": "sebastian/comparator",
@@ -1891,7 +1891,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-12-14T11:32:19+00:00"
+            "time": "2017-12-14 11:32:19"
         },
         {
             "name": "sebastian/environment",
@@ -1941,7 +1941,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2018-05-15T05:48:40+00:00"
+            "time": "2018-05-15 05:48:40"
         },
         {
             "name": "sebastian/exporter",
@@ -2008,7 +2008,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2018-06-28T14:22:04+00:00"
+            "time": "2018-06-28 14:22:04"
         },
         {
             "name": "sebastian/global-state",
@@ -2059,7 +2059,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2018-05-15T05:52:33+00:00"
+            "time": "2018-05-15 05:52:33"
         },
         {
             "name": "sebastian/object-enumerator",
@@ -2106,7 +2106,7 @@
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
-            "time": "2018-05-15T05:52:18+00:00"
+            "time": "2018-05-15 05:52:18"
         },
         {
             "name": "sebastian/object-reflector",
@@ -2151,7 +2151,7 @@
             ],
             "description": "Allows reflection of object attributes, including inherited and non-public ones",
             "homepage": "https://github.com/sebastianbergmann/object-reflector/",
-            "time": "2018-05-15T05:50:44+00:00"
+            "time": "2018-05-15 05:50:44"
         },
         {
             "name": "sebastian/recursion-context",
@@ -2204,7 +2204,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2018-05-15T05:52:05+00:00"
+            "time": "2018-05-15 05:52:05"
         },
         {
             "name": "sebastian/resource-operations",
@@ -2246,7 +2246,7 @@
             ],
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
-            "time": "2018-05-15T05:53:02+00:00"
+            "time": "2018-05-15 05:53:02"
         },
         {
             "name": "sebastian/version",
@@ -2346,7 +2346,7 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T09:13:01+00:00"
+            "time": "2018-07-26 09:13:01"
         },
         {
             "name": "symfony/css-selector",
@@ -2399,7 +2399,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T09:13:01+00:00"
+            "time": "2018-07-26 09:13:01"
         },
         {
             "name": "symfony/dom-crawler",
@@ -2407,12 +2407,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "d3a88bc40f90150e30c6c5f66c2e5cbb88250937"
+                "reference": "16f79e1e7399a7880ca8b98e7049ac44665fc20b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/d3a88bc40f90150e30c6c5f66c2e5cbb88250937",
-                "reference": "d3a88bc40f90150e30c6c5f66c2e5cbb88250937",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/16f79e1e7399a7880ca8b98e7049ac44665fc20b",
+                "reference": "16f79e1e7399a7880ca8b98e7049ac44665fc20b",
                 "shasum": ""
             },
             "require": {
@@ -2456,7 +2456,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2018-08-02T09:30:19+00:00"
+            "time": "2018-08-24 10:01:11"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2520,7 +2520,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T09:13:01+00:00"
+            "time": "2018-07-26 09:13:01"
         },
         {
             "name": "symfony/finder",
@@ -2569,7 +2569,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:25:51+00:00"
+            "time": "2018-07-26 11:25:51"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2627,7 +2627,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-08-06 14:22:27"
         },
         {
             "name": "symfony/process",
@@ -2676,7 +2676,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-08-03T11:20:06+00:00"
+            "time": "2018-08-03 11:20:06"
         },
         {
             "name": "symfony/yaml",
@@ -2735,7 +2735,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2018-08-18T16:57:16+00:00"
+            "time": "2018-08-18 16:57:16"
         },
         {
             "name": "theseer/tokenizer",
