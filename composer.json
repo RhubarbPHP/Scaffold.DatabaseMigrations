@@ -17,6 +17,13 @@
       "Rhubarb\\Scaffolds\\Migrations\\Tests\\": "tests/unit/"
     }
   },
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://bitbucket.org/gcdtech/module.migrations"
+    }
+  ],
   "require": {
     "rhubarbphp/rhubarb": "^1.5.9",
     "rhubarbphp/module-stem": "*",
@@ -24,6 +31,7 @@
     "rhubarbphp/scaffold-application-settings": "^1.0"
   },
   "require-dev": {
+    "rhubarbphp/scaffold-migrations": "*",
     "phpunit/phpunit": "^6.5",
     "codeception/codeception": "2.3.*",
     "codeception/verify": "^1.0"
