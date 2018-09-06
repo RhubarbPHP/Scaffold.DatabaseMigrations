@@ -38,10 +38,19 @@ class DatabaseMigrationsStateProvider extends MigrationsStateProvider
     }
 
     /**
+     * Updates the Start, End and Priority points on the Migration Entity to change which scripts get ran.
+     *
      * @param MigrationEntity $entity
-     * @return int
      */
-    public function getResumeVersion(MigrationEntity $entity): int {
+    public function applyResumePoint(MigrationEntity $entity): void
+    {
+        // No default behaviour, nor a demand that it be implemented.
+    }
+
+    /**
+     * @param MigrationScriptInterface $failingScript
+     */
+    public function storeResumePoint(MigrationScriptInterface $failingScript) {
 
     }
 }

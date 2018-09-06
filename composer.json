@@ -1,6 +1,6 @@
 {
   "name": "rhubarbphp/scaffold-database-migrations",
-  "description": "INSERT DESCRIPTION HERE",
+  "description": "A stem implementation of Module.Migrations for database migrations",
   "keywords": [
     "version",
     "script",
@@ -22,7 +22,7 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://bitbucket.org/gcdtech/module.migrations"
+      "url": "https://github.com/RhubarbPHP/Scaffold.DatabaseMigrations"
     }
   ],
   "require": {
