@@ -6,7 +6,7 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations\Scripts;
 use Error;
 use PHPUnit\Runner\Exception;
 use Rhubarb\Crown\Logging\Log;
-use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
+use Rhubarb\Modules\Migrations\Scripts\MigrationScriptInterface;
 use Rhubarb\Stem\Collections\Collection;
 use Rhubarb\Stem\Collections\RepositoryCollection;
 use Rhubarb\Stem\Exceptions\FilterNotSupportedException;

@@ -18,7 +18,7 @@ class MigrationScriptStatus extends Model
         FIELD_CLASS = 'class',
         FIELD_VERSION = 'version',
         FIELD_COMPLETE = 'complete',
-        FIELD_ERROR = 'error';
+        FIELD_MESSAGE = 'message';
 
     protected function createSchema()
     {
@@ -29,7 +29,7 @@ class MigrationScriptStatus extends Model
             new LongStringColumn(self::FIELD_CLASS),
             new IntegerColumn(self::FIELD_VERSION),
             new BooleanColumn(self::FIELD_COMPLETE, 0),
-            new LongStringColumn(self::FIELD_ERROR)
+            new LongStringColumn(self::FIELD_MESSAGE)
         );
 
         return $schema;

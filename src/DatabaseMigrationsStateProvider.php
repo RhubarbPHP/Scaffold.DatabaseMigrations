@@ -5,6 +5,7 @@ namespace Rhubarb\Scaffolds\Migrations;
 
 
 use Rhubarb\Modules\Migrations\MigrationsStateProvider;
+use Rhubarb\Modules\Migrations\UseCases\MigrationEntity;
 use Rhubarb\Scaffolds\ApplicationSettings\Settings\ApplicationSettings;
 
 class DatabaseMigrationsStateProvider extends MigrationsStateProvider
@@ -34,5 +35,13 @@ class DatabaseMigrationsStateProvider extends MigrationsStateProvider
     protected function getApplicationSettings(): ApplicationSettings
     {
         return ApplicationSettings::singleton();
+    }
+
+    /**
+     * @param MigrationEntity $entity
+     * @return int
+     */
+    public function getResumeVersion(MigrationEntity $entity): int {
+
     }
 }

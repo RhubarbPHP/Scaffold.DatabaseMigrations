@@ -21,9 +21,6 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations;
 use Rhubarb\Modules\Migrations\MigrationsModule;
 use Rhubarb\Modules\Migrations\MigrationsStateProvider;
 use Rhubarb\Scaffolds\ApplicationSettings\ApplicationSettingModule;
-use Rhubarb\Scaffolds\DatabaseMigrations\Commands\GetMigrationSettingsCommand;
-use Rhubarb\Scaffolds\DatabaseMigrations\Commands\MigrateCommand;
-use Rhubarb\Scaffolds\DatabaseMigrations\Commands\RunMigrationScriptCommand;
 use Rhubarb\Scaffolds\Migrations\DatabaseMigrationsStateProvider;
 
 class DatabaseMigrationsModule extends MigrationsModule
@@ -33,20 +30,6 @@ class DatabaseMigrationsModule extends MigrationsModule
         parent::initialise();
 
         MigrationsStateProvider::setProviderClassName($databaseMigrationsStateProviderClass);
-    }
-
-
-    public function getCustardCommands()
-    {
-        return
-            array_merge(
-                parent::getCustardCommands(),
-                [
-                    new MigrateCommand(),
-                    new RunMigrationScriptCommand(),
-                    new GetMigrationSettingsCommand()
-                ]
-            );
     }
 
     protected function getModules()
