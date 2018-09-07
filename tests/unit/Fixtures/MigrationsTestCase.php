@@ -5,9 +5,10 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures;
 
 
 use Rhubarb\Crown\Tests\Fixtures\TestCases\RhubarbTestCase;
-use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsManager;
-use Rhubarb\Scaffolds\DatabaseMigrations\DatabaseMigrationsModule;
-use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
+use Rhubarb\Modules\Migrations\MigrationsManager;
+use Rhubarb\Modules\Migrations\MigrationsModule;
+use Rhubarb\Modules\Migrations\MigrationsStateProvider;
+use Rhubarb\Scaffolds\DatabaseMigrations\DatabaseMigrationsStateProvider;
 use Rhubarb\Stem\Models\Model;
 use Rhubarb\Stem\Repositories\Offline\Offline;
 use Rhubarb\Stem\Repositories\Repository;
@@ -23,19 +24,16 @@ class MigrationsTestCase extends RhubarbTestCase
     {
         $parent = parent::setUp();
 
-        $this->application->registerModule(new DatabaseMigrationsModule());
+        $this->application->registerModule(new MigrationsModule());
         $this->application->initialiseModules();
 
         Repository::setDefaultRepositoryClassName(Offline::class);
         Model::deleteRepositories();
         SolutionSchema::registerSchema("Schema", MigrationsTestSchema::class);
 
-        MigrationsManager::registerMigrationManager(TestMigrationsManager::class);
         $this->manager = MigrationsManager::getMigrationsManager();
-        $this->settings = MigrationsSettings::singleton();
-
-        $this->settings->pageSize = 100;
-        $this->settings->repositoryType = Offline::class;
+        MigrationsStateProvider::setProviderClassName(DatabaseMigrationsStateProvider::class);
+        $this->stateProvider = MigrationsStateProvider::getProvider();
 
         return $parent;
     }

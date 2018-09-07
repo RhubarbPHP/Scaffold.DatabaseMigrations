@@ -22,7 +22,7 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/RhubarbPHP/Scaffold.DatabaseMigrations"
+      "url": "https://github.com/RhubarbPHP/Module.Migrations"
     }
   ],
   "require": {

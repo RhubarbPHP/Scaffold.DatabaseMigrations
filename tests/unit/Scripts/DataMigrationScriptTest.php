@@ -5,6 +5,8 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations\Tests\Scripts;
 
 
 use Rhubarb\Crown\Exceptions\ImplementationException;
+use Rhubarb\Modules\Migrations\MigrationsManager;
+use Rhubarb\Modules\Migrations\MigrationsStateProvider;
 use Rhubarb\Scaffolds\DatabaseMigrations\MigrationsSettings;
 use Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures\MigrationsTestCase;
 use Rhubarb\Scaffolds\DatabaseMigrations\Tests\Fixtures\TestDataMigrationScript;
@@ -15,10 +17,10 @@ use Rhubarb\Stem\Schema\Columns\StringColumn;
 
 class DataMigrationScriptTest extends MigrationsTestCase
 {
-    /** @var TestMigrationsManager $manager */
+    /** @var MigrationsManager $manager */
     protected $manager;
-    /** @var MigrationsSettings $settings */
-    protected $settings;
+    /** @var MigrationsStateProvider $stateProvider */
+    protected $stateProvider;
 
     public function testUpdateEnum()
     {

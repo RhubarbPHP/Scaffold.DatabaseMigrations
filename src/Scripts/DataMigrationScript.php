@@ -6,7 +6,10 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations\Scripts;
 use Error;
 use PHPUnit\Runner\Exception;
 use Rhubarb\Crown\Logging\Log;
-use Rhubarb\Modules\Migrations\Scripts\MigrationScriptInterface;
+use Rhubarb\Modules\Migrations\Interfaces\MigrationScriptInterface;
+use Rhubarb\Modules\Migrations\MigrationsStateProvider;
+use Rhubarb\Modules\Migrations\Tests\MigrationsStateProviderTest;
+use Rhubarb\Scaffolds\Migrations\DatabaseMigrationsStateProvider;
 use Rhubarb\Stem\Collections\Collection;
 use Rhubarb\Stem\Collections\RepositoryCollection;
 use Rhubarb\Stem\Exceptions\FilterNotSupportedException;
@@ -73,7 +76,7 @@ abstract class DataMigrationScript implements MigrationScriptInterface
         }
     }
 
-    /**
+    /**@deprecated This should be pulled out of this class as it is a MySql specific implementation.
      * @param string $model
      * @param string $columnName
      * @param string $currentValue
@@ -106,7 +109,7 @@ abstract class DataMigrationScript implements MigrationScriptInterface
             $this->error('current value', $currentValue);
         }
 
-        Log::info("Updating $columnName in $modelClass to replace $currentValue with $newValue");
+//        Log::info("Updating $columnName in $modelClass to replace $currentValue with $newValue");
         $column->enumValues = array_merge($column->enumValues, [$newValue]);
         if ($column->getDefaultValue() == $currentValue) {
             $column->defaultValue = $newValue;
@@ -213,7 +216,9 @@ abstract class DataMigrationScript implements MigrationScriptInterface
      */
     protected function pagedUpdate(Collection $collection, callable $loopedFunction)
     {
-        $pageSize = MigrationsSettings::singleton()->pageSize;
+        /** @var DatabaseMigrationsStateProvider $databaseMigrationsStateProvider */
+        $databaseMigrationsStateProvider = MigrationsStateProvider::getProvider();
+        $pageSize = $databaseMigrationsStateProvider->getDataMigrationsPageSize();
         $count = $collection->count();
 
         $collection->enableRanging();
@@ -320,10 +325,6 @@ abstract class DataMigrationScript implements MigrationScriptInterface
         } catch (Exception $exception) {
             $error();
             throw new $exception;
-        }
-
-        if (get_class($model->getRepository()) !== MigrationsSettings::singleton()->repositoryType) {
-            $error();
         }
 
         return $model;
