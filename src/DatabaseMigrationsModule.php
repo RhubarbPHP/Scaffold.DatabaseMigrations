@@ -21,7 +21,6 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations;
 use Rhubarb\Modules\Migrations\MigrationsModule;
 use Rhubarb\Modules\Migrations\MigrationsStateProvider;
 use Rhubarb\Scaffolds\ApplicationSettings\ApplicationSettingModule;
-use Rhubarb\Scaffolds\Migrations\DatabaseMigrationsStateProvider;
 
 class DatabaseMigrationsModule extends MigrationsModule
 {

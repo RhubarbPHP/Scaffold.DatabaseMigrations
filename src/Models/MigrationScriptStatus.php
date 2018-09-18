@@ -31,8 +31,6 @@ class MigrationScriptStatus extends Model
         FIELD_ID = 'id',
         FIELD_CLASS = 'class',
         FIELD_VERSION = 'version',
-        FIELD_PRIORITY = 'priority',
-        FIELD_COMPLETE = 'complete',
         FIELD_STATUS = 'status',
         FIELD_MESSAGE = 'message';
 
@@ -55,8 +53,6 @@ class MigrationScriptStatus extends Model
             new AutoIncrementColumn(self::FIELD_ID),
             new LongStringColumn(self::FIELD_CLASS),
             new IntegerColumn(self::FIELD_VERSION),
-            new IntegerColumn(self::FIELD_PRIORITY),
-            new BooleanColumn(self::FIELD_COMPLETE, 0),
             new MySqlEnumColumn(self::FIELD_STATUS, self::STATUS_PENDING, self::STATUSES),
             new LongStringColumn(self::FIELD_MESSAGE)
         );

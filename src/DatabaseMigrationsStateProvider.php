@@ -6,12 +6,10 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations;
 
 use Rhubarb\Modules\Migrations\Interfaces\MigrationScriptInterface;
 use Rhubarb\Modules\Migrations\MigrationsStateProvider;
-use Rhubarb\Modules\Migrations\UseCases\MigrationEntity;
 use Rhubarb\Scaffolds\ApplicationSettings\Settings\ApplicationSettings;
 use Rhubarb\Scaffolds\DatabaseMigrations\Models\MigrationScriptStatus;
+use Rhubarb\Stem\Exceptions\RecordNotFoundException;
 use Rhubarb\Stem\Filters\Equals;
-use Rhubarb\Stem\Filters\GreaterThan;
-use Rhubarb\Stem\Filters\LessThan;
 
 class DatabaseMigrationsStateProvider extends MigrationsStateProvider
 {
@@ -33,14 +31,16 @@ class DatabaseMigrationsStateProvider extends MigrationsStateProvider
         $this->getApplicationSettings()->localVersion = $this->localVersion = $newLocalVersion;
     }
 
-    public function getDataMigrationsPageSize(): int {
+    public function getDataMigrationsPageSize(): int
+    {
         if ($this->pageSize) {
             return $this->pageSize;
         }
         return $this->pageSize = ($this->getApplicationSettings()->PageSize ?? 100);
     }
 
-    public function setDataMigrationsPageSize(int $pageSize): void {
+    public function setDataMigrationsPageSize(int $pageSize): void
+    {
         $this->getApplicationSettings()->DataMigrationsPageSize = $pageSize;
     }
 
@@ -53,56 +53,62 @@ class DatabaseMigrationsStateProvider extends MigrationsStateProvider
     }
 
     /**
-     * Updates the Start, End and Priority points on the Migration Entity to change which scripts get ran.
+     * Locally stores a MigrationScript as having been successfully executed.
      *
-     * @param MigrationEntity $entity
+     * @param MigrationScriptInterface $migrationScript
      */
-    public function applyResumePoint(MigrationEntity $entity): void
+    public function markScriptCompleted(MigrationScriptInterface $migrationScript): void
     {
-        $filters = [];
-
-        $filers[] = new Equals(MigrationScriptStatus::FIELD_COMPLETE, false);
-        $filers[] = new Equals(MigrationScriptStatus::FIELD_STATUS, MigrationScriptStatus::STATUS_ERROR);
-
-        if ($entity->startVersion) {
-            $filters[] = new GreaterThan(MigrationScriptStatus::FIELD_VERSION, $entity->startVersion);
-        }
-
-        if ($entity->startPriority) {
-            $filters[] = new GreaterThan(MigrationScriptStatus::FIELD_PRIORITY, $entity->startPriority);
-        }
-
-        if ($entity->endVersion) {
-            $filters[] = new LessThan(MigrationScriptStatus::FIELD_VERSION, $entity->endVersion);
-        }
-
-        if ($entity->endPriority) {
-            $filters[] = new LessThan(MigrationScriptStatus::FIELD_PRIORITY, $entity->endPriority);
-        }
-
-        $resumeScriptModel = MigrationScriptStatus::find(...$filters);
-        if ($resumeScriptModel) {
-            /** @var MigrationScriptInterface $resumeScript */
-            $resumeScript = new $resumeScriptModel[MigrationScriptStatus::FIELD_CLASS]();
-            if (is_a($resumeScript, MigrationScriptInterface::class)) {
-                $entity->startVersion = $resumeScript->version();
-                $entity->startPriority = $resumeScript->priority();
-            }
-        }
+        $script = $this->getMigrationScriptStatus($migrationScript);
+        $script[MigrationScriptStatus::FIELD_STATUS] = MigrationScriptStatus::STATUS_SUCCESSFUL;
+        $script->save();
     }
 
-    public function storeResumePoint(MigrationScriptInterface $failingScript)
+    /**
+     * Checks if a migration script has already been successfully executed locally.
+     *
+     * @param string $className
+     * @return bool
+     */
+    public function isScriptComplete(string $className): bool
     {
-        $scriptRow =
-            MigrationScriptStatus::find(new Equals(MigrationScriptStatus::FIELD_CLASS, get_class($failingScript)));
+        if (class_exists($className)) {
+            $script = $this->getMigrationScriptStatus(new $className());
+            return ($script->status == MigrationScriptStatus::STATUS_SUCCESSFUL) ? true : false;
+        };
+        return false;
+    }
 
-        if (empty($scriptRow)) {
-            $scriptRow = new MigrationScriptStatus();
-            $scriptRow[MigrationScriptStatus::FIELD_CLASS] = get_class($failingScript);
-            $scriptRow[MigrationScriptStatus::FIELD_VERSION] = $failingScript->version();
-            $scriptRow[MigrationScriptStatus::FIELD_PRIORITY] = $failingScript->priority();
+    /**
+     * @param MigrationScriptInterface $migrationScript
+     * @return MigrationScriptStatus
+     */
+    private function getMigrationScriptStatus(MigrationScriptInterface $migrationScript): MigrationScriptStatus
+    {
+        $class = get_class($migrationScript);
+        try {
+            $script = MigrationScriptStatus::findFirst(new Equals(MigrationScriptStatus::FIELD_CLASS, $class));
+        } catch (RecordNotFoundException $e) {
+            $script = new MigrationScriptStatus();
+            $script[MigrationScriptStatus::FIELD_CLASS] = $class;
+            $script[MigrationScriptStatus::FIELD_VERSION] = $migrationScript->version();
+            $script->save();
         }
-        $scriptRow[MigrationScriptStatus::FIELD_STATUS] = MigrationScriptStatus::STATUS_ERROR;
-        $scriptRow[MigrationScriptStatus::FIELD_MESSAGE] = 'resume';
+        return $script;
+    }
+
+    /**
+     * Returns all migration scripts which have been run on the local application.
+     *
+     * @return array
+     */
+    public function getCompletedScripts(): array
+    {
+        return MigrationScriptStatus::find(
+            new Equals(
+                MigrationScriptStatus::FIELD_STATUS,
+                MigrationScriptStatus::STATUS_SUCCESSFUL
+            )
+        );
     }
 }
