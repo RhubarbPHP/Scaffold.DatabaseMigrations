@@ -24,7 +24,7 @@ class MigrationsTestCase extends RhubarbTestCase
     {
         $parent = parent::setUp();
 
-        $this->application->registerModule(new MigrationsModule());
+        $this->application->registerModule(new MigrationsModule(DatabaseMigrationsStateProvider::class));
         $this->application->initialiseModules();
 
         Repository::setDefaultRepositoryClassName(Offline::class);
@@ -32,7 +32,6 @@ class MigrationsTestCase extends RhubarbTestCase
         SolutionSchema::registerSchema("Schema", MigrationsTestSchema::class);
 
         $this->manager = MigrationsManager::getMigrationsManager();
-        MigrationsStateProvider::setProviderClassName(DatabaseMigrationsStateProvider::class);
         $this->stateProvider = MigrationsStateProvider::getProvider();
 
         return $parent;
