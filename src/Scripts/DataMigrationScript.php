@@ -76,7 +76,7 @@ abstract class DataMigrationScript implements MigrationScriptInterface
         }
     }
 
-    /**@deprecated This should be pulled out of this class as it is a MySql specific implementation.
+    /** This should be pulled out of this class as it is a MySql specific implementation.
      * @param string $model
      * @param string $columnName
      * @param string $currentValue

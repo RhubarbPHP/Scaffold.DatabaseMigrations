@@ -65,15 +65,4 @@ class ExampleDataMigrationScript extends DataMigrationScript
     {
         return 17;
     }
-
-    /**
-     * Implement this method to set the priority of a script.
-     * Scripts with higher priority are ran before other scripts for the same application version.
-     *
-     * @return int
-     */
-    public function priority(): int
-    {
-        return 10;
-    }
 }
