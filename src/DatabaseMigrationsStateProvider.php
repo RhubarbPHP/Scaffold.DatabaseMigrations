@@ -20,13 +20,19 @@ class DatabaseMigrationsStateProvider extends MigrationsStateProvider
      */
     public function getLocalVersion(): int
     {
-        return $this->localVersion = $this->getApplicationSettings()->localVersion;
+        $localVersion = $this->getApplicationSettings()->localVersion;
+
+        if ($localVersion === null){
+            $localVersion = 0;
+        }
+
+        return $this->localVersion = $localVersion;
     }
 
     /**
      * @param int $newLocalVersion
      */
-    public function setLocalVersion(int $newLocalVersion): void
+    public function setLocalVersion(int $newLocalVersion)
     {
         $this->getApplicationSettings()->localVersion = $this->localVersion = $newLocalVersion;
     }
@@ -39,7 +45,7 @@ class DatabaseMigrationsStateProvider extends MigrationsStateProvider
         return $this->pageSize = ($this->getApplicationSettings()->PageSize ?? 100);
     }
 
-    public function setDataMigrationsPageSize(int $pageSize): void
+    public function setDataMigrationsPageSize(int $pageSize)
     {
         $this->getApplicationSettings()->DataMigrationsPageSize = $pageSize;
     }
@@ -57,7 +63,7 @@ class DatabaseMigrationsStateProvider extends MigrationsStateProvider
      *
      * @param MigrationScriptInterface $migrationScript
      */
-    public function markScriptCompleted(MigrationScriptInterface $migrationScript): void
+    public function markScriptCompleted(MigrationScriptInterface $migrationScript)
     {
         $script = $this->getMigrationScriptStatus($migrationScript);
         $script[MigrationScriptStatus::FIELD_STATUS] = MigrationScriptStatus::STATUS_SUCCESSFUL;

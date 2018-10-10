@@ -21,14 +21,22 @@ namespace Rhubarb\Scaffolds\DatabaseMigrations;
 use Rhubarb\Modules\Migrations\MigrationsModule;
 use Rhubarb\Modules\Migrations\MigrationsStateProvider;
 use Rhubarb\Scaffolds\ApplicationSettings\ApplicationSettingModule;
+use Rhubarb\Scaffolds\DatabaseMigrations\Models\DatabaseMigrationsSolutionSchema;
+use Rhubarb\Stem\Schema\SolutionSchema;
 
 class DatabaseMigrationsModule extends MigrationsModule
 {
-    protected function initialise(string $databaseMigrationsStateProviderClass = DatabaseMigrationsStateProvider::class)
+    public function __construct($databaseMigrationsStateProviderClass = DatabaseMigrationsStateProvider::class)
+    {
+        parent::__construct($databaseMigrationsStateProviderClass);
+    }
+
+
+    protected function initialise()
     {
         parent::initialise();
 
-        MigrationsStateProvider::setProviderClassName($databaseMigrationsStateProviderClass);
+        SolutionSchema::registerSchema("DatabaseMigrations", DatabaseMigrationsSolutionSchema::class);
     }
 
     protected function getModules()
