@@ -29,7 +29,8 @@
     "rhubarbphp/rhubarb": "^1.5.9",
     "rhubarbphp/module-stem": "*",
     "rhubarbphp/custard": "*",
-    "rhubarbphp/scaffold-application-settings": "^1.0"
+    "rhubarbphp/scaffold-application-settings": "^1.0",
+    "rhubarbphp/module-migrations": "^1.0"
   },
   "require-dev": {
     "rhubarbphp/module-migrations": "*",
