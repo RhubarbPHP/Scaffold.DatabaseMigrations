@@ -1,5 +1,5 @@
 Stem Migrations Scaffold
-====================
+========================
 
 This scaffold is a stem-specific implementation of [the Migrations module.](https://github.com/RhubarbPHP/Module.Migrations) It includes:
 
